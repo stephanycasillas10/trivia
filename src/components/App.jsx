@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import "../css/App.css";
 import Question from "./Question/Question";
+import NextQuestion from "./NextQuestion/NextQuestion";
 import data from "../sample_data.json";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="app">
       Trivia!
       <Question question={data[questionNum].question.text} />
+      <NextQuestion />
     </div>
   );
 }
