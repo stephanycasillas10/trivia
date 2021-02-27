@@ -9,7 +9,10 @@ function App() {
   return (
     <div className="app">
       Trivia!
-      <Question question={data[questionNum].question.text} />
+      <Question
+        question={data[questionNum].question.text}
+        choices={data[questionNum].question.choices}
+      />
       <NextQuestion />
     </div>
   );
