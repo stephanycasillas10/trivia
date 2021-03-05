@@ -10,6 +10,7 @@ function App() {
     <div className="app">
       Trivia!
       <Question
+        correctChoiceIndex={data[questionNum].question.correct_choice_index}
         question={data[questionNum].question.text}
         choices={data[questionNum].question.choices}
       />
