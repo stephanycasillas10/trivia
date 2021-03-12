@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 
 function NextQuestion(props) {
-  return <button>Next Question</button>;
+  return <button onClick={props.onNextQuestion}>Next Question</button>;
 }
 
 export default NextQuestion;

@@ -1,16 +1,19 @@
 import React, { Component, useState } from "react";
+import AnswerChoice from "../AnswerChoice/AnswerChoice";
 import Answer from "../Answer/Answer";
-import AnswerButton from "../AnswerButton/AnswerButton";
 function Question(props) {
-  const { question, choices } = props;
-  const answerChoices = choices.map((choice) => <Answer answer={choice} />);
+  const { question, choices,correctChoiceIndex } = props;
+  const answerChoices = choices.map((choice) => (
+    <AnswerChoice answer={choice} />
+  ));
   return (
     <div className="question">
       {question}
       {answerChoices}
-      <AnswerButton />
+      <Answer correctAnswer={choices[correctChoiceIndex]} />
     </div>
   );
 }
 
 export default Question;
+
