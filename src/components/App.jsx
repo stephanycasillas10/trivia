@@ -7,18 +7,20 @@ import data from "../sample_data.json";
 function App() {
   const [isAnswered, setIsAnswered] = useState("unanswered");
   function answerclickhandler() {
-    setIsAnswered(props.correctAnswer);
+    var correctChoiceIndex = data[questionNum].question.correct_choice_index;
+    var choices = data[questionNum].question.choices;
+    setIsAnswered(choices[correctChoiceIndex]);
   }
   const [questionNum, setQuestionNum] = useState(0);
   function clickhandler() {
     setQuestionNum(questionNum + 1);
+    setIsAnswered("unanswered");
   }
 
   return (
     <div className="app">
       Trivia!
       <Question
-        correctChoiceIndex={data[questionNum].question.correct_choice_index}
         question={data[questionNum].question.text}
         choices={data[questionNum].question.choices}
       />
